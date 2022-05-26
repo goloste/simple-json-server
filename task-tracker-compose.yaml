@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  task-tracker-client:
+    image: task-tracker-client
+    ports:
+      - 3000:3000
+  task-tracker-server:
+    image: task-tracker-server
+    ports:
+      - 5000:5000
+    volumes:
+      - ttServerDBVol:/app/db
+volumes:
+  ttServerDBVol:
